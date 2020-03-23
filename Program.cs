@@ -11,32 +11,38 @@ namespace DepartmentsEmployees
         {
             DepartmentRepository departmentRepo = new DepartmentRepository();
 
-            Console.WriteLine("Getting All Departments:");
-            Console.WriteLine();
+            EmployeeRepository employeeRepo = new EmployeeRepository();
 
-            List<Department> allDepartments = departmentRepo.GetAllDepartments();
+            //Console.WriteLine("Employee report:");
 
-            foreach (Department dept in allDepartments)
-            {
-                Console.WriteLine($"{dept.Id} {dept.DeptName}");
-            }
+            //List<Employee> allEmployeesWithDepartment = employeeRepo.GetAllEmployeesWithDepartment();
 
-            Console.WriteLine("----------------------------");
-            Console.WriteLine("Getting Department with Id 1");
+            //foreach (Employee emp in allEmployeesWithDepartment)
+            //{
+            //    Console.WriteLine($"{emp.Id} {emp.FirstName} {emp.LastName} {emp.Department.DeptName}");
+            //}
+            Console.WriteLine("-----------------------------------\n");
 
-            Department singleDepartment = departmentRepo.GetDepartmentById(1);
+            Console.WriteLine("1. Get all departments");
+            Console.WriteLine("2. Get department by ID");
+            Console.WriteLine("3. Add a department");
+            Console.WriteLine("4. Update a department");
+            Console.WriteLine("5. Delete a department");
+            Console.WriteLine("6. Get all employees");
+            Console.WriteLine("7. Get employee by ID");
+            Console.WriteLine("8. Get employees with department");
+            Console.WriteLine("9. Add a employee");
+            Console.WriteLine("10. Update a employee");
+            Console.WriteLine("11. Delete a employee");
 
-            Console.WriteLine($"{singleDepartment.Id} {singleDepartment.DeptName}");
+            Console.WriteLine("\n-----------------------------------\n");
 
-            Department legalDept = new Department
-            {
-                DeptName = "Legal"
-            };
 
-            departmentRepo.AddDepartment(legalDept);
 
-            Console.WriteLine("-------------------------------");
-            Console.WriteLine("Added the new Legal Department!");
+
+            Console.WriteLine("What operation would you like to perform?");
+            Console.Write("> ");
+            Console.ReadLine();
         }
     }
 }
